@@ -1,0 +1,106 @@
+:root {
+    --primary-clr: #3B4E5F;
+    --secondary-clr: #5290C8;
+    --component-bg-clr: #2D5477;
+    --text-clr: #E5E5E5;
+    --menu-active-clr: #6664D9;
+    --default-component-clr: #3F709A;
+}
+
+body {
+    background-color: var(--primary-clr);
+    font-size: 1rem;
+    color: var(--text-clr);
+    margin: 0;
+    text-align: center;
+}
+
+
+    
+    
+
+/* ---------------- Hero Navagation Bar --------------- */
+.primary-header {
+    min-width: 100%;
+    top: 0;
+    position: fixed;
+    padding: 0rem 1rem;
+    background-color: var(--primary-clr);
+    
+}
+.navbar {
+    display: flex; 
+}
+
+.navbar__image {
+    margin: auto;
+}
+
+.navbar__hamburger-menu {
+    align-self: center;
+}
+
+.navbar__hamburger-menu img {
+    height: 3rem;
+}
+
+.navbar__brokenimg {
+    height: 5rem;
+}
+/* ---------------- Hero Intro --------------- */
+
+.intro {
+    display: flex;
+    background-color: var(--secondary-clr);
+    min-height: 20rem;
+    margin-top: 100px;
+    align-items: center;
+    padding: 2rem 6.5rem;
+}
+
+
+/* ---------------- Hero Component --------------- */
+
+.component__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: .25rem;
+    margin: 2rem .75rem;
+    border-radius: 5px;
+    font-size: .75rem;
+    max-width: 100rem;
+    background-color: var(--component-bg-clr);
+}
+
+
+
+.component {
+    display: flex;
+    background-color: var(--default-component-clr);
+    min-height: 10rem;
+    border-radius: 7px;
+}
+/* --------------- TODO need image to fill container ---------------- */
+.component__brokenimg {
+    height: 15rem;
+    width: 100%;
+}
+
+.component__body {
+    align-self: center;
+    display: none;
+}
+
+@media screen and (min-width: 800px) {
+    .component__container {
+        margin: 2rem 5rem;
+        padding: 5rem 2rem;
+    }
+    
+}
+
+@media screen and (min-width: 500px) {
+    .component__body {
+        display: block;
+    }
+}
