@@ -1,18 +1,21 @@
 :root {
-    --primary-clr: #3B4E5F;
-    --secondary-clr: #5290C8;
-    --component-bg-clr: #2D5477;
+    --primary-clr: #3A4C5B;
+    --secondary-clr:  #5290C8;
+    --component-bg-clr: #2D5477 ;
     --text-clr: #E5E5E5;
     --menu-active-clr: #6664D9;
-    --default-component-clr: #3F709A;
+    --default-component-clr: #5290C8;
+    --navbar-clr: #25333E;
+    --navbar-active-btn-clr: linear-gradient(180deg, #8B85E7 49.48%, #3e43bb4a 100%);
+    --navbar-default-btn-clr: linear-gradient(180deg, #5461B6 1.04%, #2F4F6C 100%);
 }
 
 body {
     background-color: var(--primary-clr);
     font-size: 1rem;
-    color: var(--text-clr);
     margin: 0;
     text-align: center;
+    color: var(--text-clr);
 }
 
 
@@ -22,40 +25,66 @@ body {
 /* ---------------- Hero Navagation Bar --------------- */
 .primary-header {
     min-width: 100%;
-    top: 0;
-    position: fixed;
-    padding: 0rem 1rem;
+    top: 0rem;
     background-color: var(--primary-clr);
-    
+    border-radius: 20rem;
 }
 .navbar {
-    display: flex; 
+    display: flex;
+    align-items: center;
+    background-color: var(--navbar-clr);
+    height: 5rem;
 }
+
 
 .navbar__image {
-    margin: auto;
+    flex: 1;
 }
 
-.navbar__hamburger-menu {
-    align-self: center;
+.navbar__hamburger-menu a:hover {
+    cursor: pointer;
 }
 
-.navbar__hamburger-menu img {
+
+.menu--default {
     height: 3rem;
 }
 
+
+.menu--active {
+    display: none;
+}
+
 .navbar__brokenimg {
-    height: 5rem;
+    height: 6rem;    
+} 
+
+.navbar__button-container {
+    display: none;
+}
+
+.navbar__button {
+    height: 2rem;
+    width: 8rem;
+    border-radius: 20rem;
+    background-image: var(--navbar-default-btn-clr);
+    
 }
 /* ---------------- Hero Intro --------------- */
 
 .intro {
     display: flex;
     background-color: var(--secondary-clr);
-    min-height: 20rem;
-    margin-top: 100px;
+    height: 15rem;
     align-items: center;
-    padding: 2rem 6.5rem;
+    padding: 0rem 10remrem;
+    font-size: 1em;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.intro p {
+    margin: 0rem 15rem;
 }
 
 
@@ -66,24 +95,27 @@ body {
     flex-direction: column;
     row-gap: .25rem;
     margin: 2rem .75rem;
-    border-radius: 5px;
+    padding: 2rem;
     font-size: .75rem;
-    max-width: 100rem;
-    background-color: var(--component-bg-clr);
+    background-color: #3F709A;
+    border-radius: .25rem;
 }
 
 
 
 .component {
     display: flex;
+    justify-content: center;
     background-color: var(--default-component-clr);
-    min-height: 10rem;
     border-radius: 7px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
 }
 /* --------------- TODO need image to fill container ---------------- */
 .component__brokenimg {
-    height: 15rem;
-    width: 100%;
+    width: 70%;   
+    height: 70%;
+    cursor: pointer;
 }
 
 .component__body {
@@ -91,16 +123,72 @@ body {
     display: none;
 }
 
-@media screen and (min-width: 800px) {
+/* ----------------Desktop display--------------- */
+@media screen and (min-width: 650px) {
     .component__container {
-        margin: 2rem 5rem;
+        margin: auto;
+        margin-top: 2rem;
         padding: 5rem 2rem;
+        max-width: 50%;
+        background-color: #3F709A;
     }
-    
-}
 
-@media screen and (min-width: 500px) {
+    .component:hover {
+        background-image: var(--navbar-active-btn-clr);
+        cursor: pointer;
+        scale: 1.05;
+    }
+
     .component__body {
         display: block;
     }
+
+    .menu--default {
+        display: none;
+    }
+
+    .navbar {
+            position: relative;
+        }
+
+    .navbar__button-container {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        margin-left: 2rem;
+    }
+    .navbar__buttons {
+        display: flex;
+        list-style: none;
+        column-gap: 2rem;
+        margin-right: 3rem;
+        padding: 0;
+    }
+
+    .navbar__button:hover {
+        background-image: var(--navbar-active-btn-clr);
+        scale: 1.02;
+    }
+
+    .navbar__button a {
+        
+    }
+
+    .navbar__hamburger-menu {
+        display: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--text-clr);
+        
+    }
+
+    .intro {
+        padding: 0rem 0rem;
+    }
+    
+   intro p {
+    padding-top: 2.4rem;
+   }
 }
