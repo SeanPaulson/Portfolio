@@ -7,7 +7,7 @@ body {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background: #ffffff;
     border-width: 1px;
@@ -18,17 +18,16 @@ body {
 }
 
 .navUl {
-    display: flex;
-    justify-content: center;
-    column-gap: 5rem;
+    display: none;
 }
 
 #nav__item0 {
+    /* flex: 1; */
+    text-align: center;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    font-size: 36px;
-    line-height: 0%;
+    font-size: 5vw;
 }
 
 #nav__item5 {
@@ -48,7 +47,6 @@ body {
 .head__container {
     display: flex;
     justify-content: center;
-    padding: 0 3.5rem;
     background-image: url(/recources/images/HeroIntroBgImg.svg);
     background-repeat: no-repeat;
     background-position: right;
@@ -76,7 +74,7 @@ body {
     animation: splitFade 1s ease-in 0s 1 normal forwards;
     color: white;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 2vw;
     font-family: inter;
     padding-right: 4rem;
     
@@ -114,5 +112,33 @@ body {
 
     to {
         margin-left: .5rem;
+    }
+}
+
+@media (min-width: 650px) {
+    .head__container {
+        margin: 0 3.5rem;
+
+    }
+    .navUl {
+        display: flex;
+        justify-content: center;
+        column-gap: 2rem;
+        font-size: 1.5vw;
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 3rem;
+        background: #ffffff;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #BCBCBC;
+        padding: 1rem 1.5rem;
+        margin-bottom: 4rem;
+    }
+    #nav__item0{
+        font-size: 4vw;
     }
 }
