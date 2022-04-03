@@ -147,6 +147,11 @@ main {
     border-radius: 2px;
     width: 47%;
     height: 8rem;
+    background-color: white;
+}
+
+.projects__project:hover {
+    transform: scale(1.2);
 }
 
 #project1 {
